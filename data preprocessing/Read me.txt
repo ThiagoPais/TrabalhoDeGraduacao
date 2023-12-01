@@ -1,0 +1,6 @@
+This is the code for delete, insert and calculate the insert rate.
+
+To keep the inseted files that I created, please change the data path to create a new folder to save the new file, if you want to
+create,too. You can follow the instruction in the read me.txt outside this folder.
+
+Since some data after insertion look not well, so I picked some of them to use for further training and testing.

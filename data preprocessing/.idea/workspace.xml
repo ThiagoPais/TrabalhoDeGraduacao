@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0195ef12-c73e-464c-9dc0-30389edee121" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../models/LSTM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/4 actions in 0 o‘clock in row.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/4 actions in 6 o‘clock in row without butterworth filter.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/4 actions in 6 o‘clock in row without butterworth filter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/4 actions in 6 o‘clock in row.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/4 actions in 6 o‘clock in row.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/4 actions in 6 o‘clock.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/4 actions in 6 o‘clock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/empty.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/empty.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/sit over 12 directions.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/sit over 12 directions.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/stand over 12 directions.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/stand over 12 directions.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/stand120s.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/stand120s.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/walk over 12 directions.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/walk over 12 directions.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/walk120s.png" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/walk120s.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/1 task ProtoNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/1 task ProtoNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/4 actions in one direction.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/4 actions in one direction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/X_tensor-326.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/X_test-127.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/X_test-326.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/amp_time_functionzidian_success.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/amp_time_functionzidian_success.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/combinational label CNN-BiLSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/combinational label CNN-BiLSTM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/combinational label CNN-LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/combinational label CNN-LSTM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/combined_labels_tensor-326.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/one action in 12 directions in 10s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/one action in 12 directions in 10s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/one action in 120s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/one action in 120s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/one sensor one action subcarrier 120s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/one sensor one action subcarrier 120s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/one_sensor_one_action_120s.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/one_sensor_one_action_120s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/save data with combinational label for few shot.py" beforeDir="false" afterPath="$PROJECT_DIR$/../models/save data with combinational label for few shot.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2VsuwFcF4FU13BrIzSd4VzhK15b" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Boyang&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/KIT/毕业设计/Boyang-Master-thesis&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0195ef12-c73e-464c-9dc0-30389edee121" name="Changes" comment="" />
+      <created>1695637345773</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695637345773</updated>
+    </task>
+    <servers />
+  </component>
+</project>

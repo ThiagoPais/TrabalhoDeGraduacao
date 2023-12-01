@@ -1,0 +1,86 @@
+This txt includes two parts: Description about all folders + Instructions from the very beginning
+
+Description about all folders:
+
+1. csi261: code for CSI collection,
+csi261M1 is the folder for Master1,
+csi261M2 is the folder for Masrer2,
+csi261S is the folder for all sensors.
+
+2. data: each folder include origin, delete and insert. Data in Origin is the raw data, data in delete is the deleted data, data in insert is the inserted data, and there is also a insert rate. 
+0928itiv 326 is the data for source environment,
+0929itiv 127 is the data for target environment,
+1019itiv 127 is the data for different person.
+
+3.data preprocessing is used for processing of raw CSI
+
+4.models includes the most import code for different models:
+(1).ProtoNet--used to do Meta-Learning, through using different .py files, can change its input.
+(2).The python files are deep learning model with different models:
+CNN, CNN-LSTM, CNN-BiLSTM, LSTM, Resnet
+(3).amp_time_functionzidian_success.py --- used to get data of every 10s (each activity under one direction)
+(4).save data with combination label for deep learning.py---- Save the processed data into dictionary for deep learning.
+  save data with combinational label for few shot.py------Save the processed data into dictionary for few shot.
+(5). Files end with .pt---------saved processed data for different situations.
+
+5.Latex project includes the project file for written thesis
+
+Instructions from the very beginning:
+1.Data Collection:
+(1)Download the ESP-IDF 5.0 CMD software, links:https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html
+(2). Open the ESP-IDF 5.0 CMD, uses the command"cd E:/Boyang-Master-thesis/csi261/csi261s" to open the folder where the code for sensors is. Connect ESP32 No.3,4,5,6,7 with computer, and from the Device Manager on the computer check the Dort that ESP32 use, and go to ESP-IDF 5.0 CMD use the command "idf.py flash port -p COMXX monitor" to flash the code for sensors, and close the window of ESP-IDF 5.0 CMD.
+(3). Open another ESP-IDF 5.0 CMD, uses the command"cd E:/Boyang-Master-thesis/csi261/csi261M2" to open the folder where the code for Master2 is. Connect ESP32 No.2 with computer, and from the Device Manager on the computer check the Dort that ESP32 uses, and go to ESP-IDF 5.0 CMD use the command "idf.py flash port -p COMXX monitor" to flash the code for Master 2, and keep it running.
+(4)Open another ESP-IDF 5.0 CMD, uses the command"cd E:/Boyang-Master-thesis/csi261/csi261M1" to open the folder where the code for Master1 is. Connect ESP32 No.8 with computer, and from the Device Manager on the computer check the Dort that ESP32 uses, and go to ESP-IDF 5.0 CMD use the command "idf.py flash port -p COMXX monitor | findstr "CSI_DATA" > my-experiment-file.csv "to flash the code for Master1 to ESP32, after 2 min, stop it, just tape: Ctrl+], and there will be a .csv file in the folder of Master1, that's the raw CSI. 
+collect the data for 4 activities under 12 directions.
+
+2.Data preprocessing
+
+!!!! Suggestion !!!!!: Please change the data path for insert, if you want to run the code in this folder. Since there are some data after insert look not well, only a part of all data is picked for further training and testing.
+
+Use the coed in folder data preprocessing to process raw data. 
+(1)First delete the unsuitable data. Check the values in column K and L in csv file, if the number of them is too big, then write the proper numbers in invalid rows in delete.py. Choose proper data path for the csv file, write it in "base_path_input", the output path is in "base_path_output", where you can find the deleted files.
+(2)Do the interpolation with insert.py, Use the unsuitable data deleted files as the input, and output is in another folder called "insert".
+(3)Check the interpolation rate with cout lines by insertions.py. Use the data from origin as the file_in, and the inserted data as the file_ins, and get the insert rate.
+
+3.Model Traning and testing
+(1). Data set for Input: 
+For deep learning: 
+Every time just save one training set and testing set, so to try data in different environment, just change the base_path_output for the corresponding path and rename the pt file for saving.
+
+For few-shot: since every time processed with data in two environment, so to ensure that they use the correct number of experiments,there are 16 experiments in source environment, 9 experiments in target envrionment, and 6 experiments in different person situation. Just change here:"for ex in range(1, 17):" you can find it in "save data with combinational label for few shot.py" 
+
+(2). deep learning
+The input data is already selected, so just ran the code "CNN.py, CNN-LSTM.py, CNN-BiLSTM.py, LSTM.py, Resnet.py", you will get the figure with accuracy and loss.
+'X_train_combo-326.pt' means training data in source environment,
+'combo_labels_train-326.pt' means training labels in source environment.
+'X_test_combo-326.pt' means testing data in source environment,
+'combo_labels_test-326.pt' means testing labels in source environment,
+If using the data from target environment to test, then just change the name of testing set to 'X_test_combo-127.pt' and 'combo_labels_test-127.pt'
+
+(3). few-shot(Proto Net) only use the ProtoNet.py one file.
+The default code is using data from source environment(E1) to train and target environment(E2) to test, with 5 samples from each category for support set, 200 epochs and 0.001 learning rate, adam optimizer.
+Here are four situations in A,B,C,D.
+
+A).For test on differnet person:
+you need to first change the number of experiments in row 48, from 9 to 6, and then in row 56, change (X_test_full_loaded, test_combo_labels_loaded) to (X_test_full_person, test_combo_labels_pserson)
+
+B).For choosing different feature extractor:
+Comment and uncomment code is based on after choosing other feature extractors, then go back to the default one.
+deafult is using CNN,
+ResNet: Uncomment the code in row 347, and comment the code in 344.
+single LSTM: Uncomment the code in row 350, and comment the code in 344. If use single BiLSTM, based on LSTM setting, then Uncomment the code from row 140-142 and row 154, comment the code in row 135-137 and row 151.
+CNN-LSTM: Uncomment the code from row 195-201 and row 213-220, comment the code from row 203-205 and row 223-225. If using CNN-BiLSTM, based on CNN-LSTM seting, then set the code in row 197 "bidirectional=True", and in row 201, the code would be "self.fc = nn.Linear( 2*hidden_size, 48)"
+
+C).For different number of samples for support set: change the number in row 332 and 334 "n_support" and "n_support_test"
+
+D).For different number of categories for support set: 
+default is using random selection.
+comment the code in row 297-303, and uncomment the code from row 305-311.
+using 3 directions, then  the number in row 308 should be 4,
+using 4 directions, then  the number in row 308 should be 3,
+using 6 directions, then  the number in row 308 should be 2,
+using 12 directions, then  the number in row 308 should be 1,
+
+For testing with different number of sensors, 
+default is using 5 sensors.
+Change the input for both two environment from previous to next row. e.g. 'X_tensor_final326.pt' changes to 'X_tensor_1sensor_326.pt', and change the number of 1 to 2 or 3 or 4, then the accuracy will change.

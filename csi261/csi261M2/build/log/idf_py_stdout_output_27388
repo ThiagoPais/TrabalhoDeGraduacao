@@ -1,0 +1,84 @@
+-- Found Git: C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
+-- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Project is not inside a git repository, or git repository has no commits; will not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file C:/Users/liboy/esp/csi261/csi261M2/sdkconfig
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:206 CONFIG_MCPWM_ISR_IN_IRAM was replaced with CONFIG_MCPWM_ISR_IRAM_SAFE
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:285 CONFIG_ESP32_DEFAULT_CPU_FREQ_80 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_80
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:286 CONFIG_ESP32_DEFAULT_CPU_FREQ_160 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_160
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:287 CONFIG_ESP32_DEFAULT_CPU_FREQ_240 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:288 CONFIG_ESP32_DEFAULT_CPU_FREQ_MHZ was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:289 CONFIG_ESP32_SPIRAM_SUPPORT was replaced with CONFIG_SPIRAM
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:292 CONFIG_ESP32_ULP_COPROC_ENABLED was replaced with CONFIG_ULP_COPROC_ENABLED
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:293 CONFIG_ESP32_ULP_COPROC_RESERVE_MEM was replaced with CONFIG_ULP_COPROC_RESERVE_MEM
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:294 CONFIG_ESP32_DEBUG_OCDAWARE was replaced with CONFIG_ESP_DEBUG_OCDAWARE
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:295 CONFIG_ESP32_BROWNOUT_DET was replaced with CONFIG_ESP_BROWNOUT_DET
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:296 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_0 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_0
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:297 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_1 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_1
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:298 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_2 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_2
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:299 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_3 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_3
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:300 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_4 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_4
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:301 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_5 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_5
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:302 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_6 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_6
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:303 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_7 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_7
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:304 CONFIG_ESP32_BROWNOUT_DET_LVL was replaced with CONFIG_ESP_BROWNOUT_DET_LVL
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:305 CONFIG_ESP32_TIME_SYSCALL_USE_RTC_FRC1 was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC_HRT
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:306 CONFIG_ESP32_TIME_SYSCALL_USE_RTC was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:307 CONFIG_ESP32_TIME_SYSCALL_USE_FRC1 was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_HRT
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:308 CONFIG_ESP32_TIME_SYSCALL_USE_NONE was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_NONE
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:309 CONFIG_ESP32_RTC_CLK_SRC_INT_RC was replaced with CONFIG_RTC_CLK_SRC_INT_RC
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:310 CONFIG_ESP32_RTC_CLK_SRC_EXT_CRYS was replaced with CONFIG_RTC_CLK_SRC_EXT_CRYS
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:311 CONFIG_ESP32_RTC_CLK_SRC_EXT_OSC was replaced with CONFIG_RTC_CLK_SRC_EXT_OSC
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:312 CONFIG_ESP32_RTC_CLK_SRC_INT_8MD256 was replaced with CONFIG_RTC_CLK_SRC_INT_8MD256
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:313 CONFIG_ESP32_RTC_CLK_CAL_CYCLES was replaced with CONFIG_RTC_CLK_CAL_CYCLES
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:314 CONFIG_ESP32_DEEP_SLEEP_WAKEUP_DELAY was replaced with CONFIG_ESP_SLEEP_DEEP_SLEEP_WAKEUP_DELAY
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:315 CONFIG_ESP32_XTAL_FREQ_40 was replaced with CONFIG_XTAL_FREQ_40
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:316 CONFIG_ESP32_XTAL_FREQ_26 was replaced with CONFIG_XTAL_FREQ_26
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:317 CONFIG_ESP32_XTAL_FREQ_AUTO was replaced with CONFIG_XTAL_FREQ_AUTO
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:318 CONFIG_ESP32_XTAL_FREQ was replaced with CONFIG_XTAL_FREQ
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:320 CONFIG_ESP32_NO_BLOBS was replaced with CONFIG_APP_NO_BLOBS
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:321 CONFIG_ESP32_COMPATIBLE_PRE_V2_1_BOOTLOADERS was replaced with CONFIG_APP_COMPATIBLE_PRE_V2_1_BOOTLOADERS
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:322 CONFIG_ESP32_COMPATIBLE_PRE_V3_1_BOOTLOADERS was replaced with CONFIG_APP_COMPATIBLE_PRE_V3_1_BOOTLOADERS
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:395 CONFIG_OTA_ALLOW_HTTP was replaced with CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:519 CONFIG_ESP_TASK_WDT was replaced with CONFIG_ESP_TASK_WDT_INIT
+C:/Users/liboy/esp/csi261/csi261M2/sdkconfig:697 CONFIG_HAL_ASSERTION_SILIENT was replaced with CONFIG_HAL_ASSERTION_SILENT
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: C:/Espressif/python_env/idf5.0_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "csi261M2" version: 1
+-- Adding linker script C:/Users/liboy/esp/csi261/csi261M2/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script C:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_netif esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: C:/Espressif/frameworks/esp-idf-v5.0.1/components/app_trace C:/Espressif/frameworks/esp-idf-v5.0.1/components/app_update C:/Espressif/frameworks/esp-idf-v5.0.1/components/bootloader C:/Espressif/frameworks/esp-idf-v5.0.1/components/bootloader_support C:/Espressif/frameworks/esp-idf-v5.0.1/components/bt C:/Espressif/frameworks/esp-idf-v5.0.1/components/cmock C:/Espressif/frameworks/esp-idf-v5.0.1/components/console C:/Espressif/frameworks/esp-idf-v5.0.1/components/cxx C:/Espressif/frameworks/esp-idf-v5.0.1/components/driver C:/Espressif/frameworks/esp-idf-v5.0.1/components/efuse C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp-tls C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_app_format C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_eth C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_event C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hid C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_http_client C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_http_server C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_https_ota C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_https_server C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_lcd C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_local_ctrl C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_netif C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_partition C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_phy C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_pm C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_psram C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_ringbuf C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_timer C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_wifi C:/Espressif/frameworks/esp-idf-v5.0.1/components/espcoredump C:/Espressif/frameworks/esp-idf-v5.0.1/components/esptool_py C:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs C:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos C:/Espressif/frameworks/esp-idf-v5.0.1/components/hal C:/Espressif/frameworks/esp-idf-v5.0.1/components/heap C:/Espressif/frameworks/esp-idf-v5.0.1/components/http_parser C:/Espressif/frameworks/esp-idf-v5.0.1/components/idf_test C:/Espressif/frameworks/esp-idf-v5.0.1/components/ieee802154 C:/Espressif/frameworks/esp-idf-v5.0.1/components/json C:/Espressif/frameworks/esp-idf-v5.0.1/components/log C:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip C:/Users/liboy/esp/csi261/csi261M2/main C:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls C:/Espressif/frameworks/esp-idf-v5.0.1/components/mqtt C:/Espressif/frameworks/esp-idf-v5.0.1/components/newlib C:/Espressif/frameworks/esp-idf-v5.0.1/components/nvs_flash C:/Espressif/frameworks/esp-idf-v5.0.1/components/openthread C:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table C:/Espressif/frameworks/esp-idf-v5.0.1/components/perfmon C:/Espressif/frameworks/esp-idf-v5.0.1/components/protobuf-c C:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm C:/Espressif/frameworks/esp-idf-v5.0.1/components/pthread C:/Espressif/frameworks/esp-idf-v5.0.1/components/sdmmc C:/Espressif/frameworks/esp-idf-v5.0.1/components/soc C:/Espressif/frameworks/esp-idf-v5.0.1/components/spi_flash C:/Espressif/frameworks/esp-idf-v5.0.1/components/spiffs C:/Espressif/frameworks/esp-idf-v5.0.1/components/tcp_transport C:/Espressif/frameworks/esp-idf-v5.0.1/components/ulp C:/Espressif/frameworks/esp-idf-v5.0.1/components/unity C:/Espressif/frameworks/esp-idf-v5.0.1/components/usb C:/Espressif/frameworks/esp-idf-v5.0.1/components/vfs C:/Espressif/frameworks/esp-idf-v5.0.1/components/wear_levelling C:/Espressif/frameworks/esp-idf-v5.0.1/components/wifi_provisioning C:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant C:/Espressif/frameworks/esp-idf-v5.0.1/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/liboy/esp/csi261/csi261M2/build

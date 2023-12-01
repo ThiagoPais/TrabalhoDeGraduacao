@@ -1,0 +1,8 @@
+idf.py build
+idf.py -p /dev/cu.usbserial-0001 flash
+idf.py -p /dev/cu.usbserial-3 flash
+idf.py -p /dev/cu.usbserial-5 flash
+idf.py -p /dev/cu.usbserial-6 flash
+idf.py -p /dev/cu.usbserial-8 flash
+idf.py -p /dev/cu.usbserial-114430 flash
+

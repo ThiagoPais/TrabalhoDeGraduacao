@@ -1,0 +1,4 @@
+esptool.py v4.5.1
+Serial port COM6
+
+A fatal error occurred: Could not open COM6, the port doesn't exist
