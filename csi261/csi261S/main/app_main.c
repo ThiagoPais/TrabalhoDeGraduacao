@@ -69,7 +69,14 @@ uint8_t sendNow = 1; // Received req. from Master; CSI ready in CallBack functio
 
 
 static const char *TAG = "csi_recv";
-static const uint8_t CONFIG_CSI_SEND_MAC[] = {0xc4, 0xde, 0xe2, 0xc0, 0x10, 0xc8}; // "8"
+static const uint8_t CONFIG_CSI_MACS[][] =  {{0xc4, 0xde, 0xe2, 0xc0, 0x10, 0xc8}, //Master 1
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa}, //Master 2
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa}, //Sensors
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa},
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa},
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa},
+                                             };
+//static const uint8_t CONFIG_CSI_SEND_MAC[] = {0xc4, 0xde, 0xe2, 0xc0, 0x10, 0xc8}; // "8"
 
 /* ITIV Sensors *
 uint8_t CONFIG_CSI_SEND_MAC1[] = {0xc0, 0x49, 0xef, 0x4b, 0x2a, 0x14}; // "1"
@@ -112,6 +119,7 @@ void print_stime() {
     ets_printf(" t(ms): %d.%02u",  dtime / DEC_PLACE_MULT, abs(dtime) % DEC_PLACE_MULT);
 }
 
+/*
 uint8_t na4MAC(uint8_t *mac) {
     uint8_t name;
     uint8_t mac4=mac[4], mac5=mac[5];
@@ -132,7 +140,26 @@ uint8_t na4MAC(uint8_t *mac) {
     else if (mac5==0xb0) name=15;
     else name=9;
     return name;
+}*/
+
+uint8_t na4MAC(uint8_t *mac) {
+    uint8_t name;
+    
+    for(int i = 0; i < sizeof(CONFIG_CSI_MACS), i++){
+        /*
+        if(i==0){ //this condition is used for ESPs with the same hex in fifth position, remember to write all the ocorrences here, if necessary
+            if(mac[5] == 0x00){name = 0; if(mac[4] == 0x00) name = 0}
+            break;
+        }*/
+
+        if(mac[5] == CONFIG_CSI_MACS[i][5]){
+            name = i+1;
+            break;
+        }   
+    }
+    return name;
 }
+
 static void wifi_init()
 {
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -150,7 +177,7 @@ static void wifi_init()
     ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
 
     ESP_ERROR_CHECK(esp_wifi_set_channel(CONFIG_LESS_INTERFERENCE_CHANNEL, WIFI_SECOND_CHAN_BELOW));
-    ESP_ERROR_CHECK(esp_wifi_set_mac(WIFI_IF_STA, CONFIG_CSI_SEND_MAC));
+    ESP_ERROR_CHECK(esp_wifi_set_mac(WIFI_IF_STA, CONFIG_CSI_MACS[0]));
 }
 
 
@@ -353,7 +380,7 @@ void app_main()
 
     ESP_LOGI(TAG, "================ CSI SEND ================");
     ESP_LOGI(TAG, "wifi_channel: %d, send_frequency: %d, mac: " MACSTR,
-             CONFIG_LESS_INTERFERENCE_CHANNEL, CONFIG_SEND_FREQUENCY, MAC2STR(CONFIG_CSI_SEND_MAC));
+             CONFIG_LESS_INTERFERENCE_CHANNEL, CONFIG_SEND_FREQUENCY, MAC2STR(CONFIG_CSI_MACS[0]));
 
     wifi_csi_init(); //��ʼ��CSI��Channel State Information����������漰����ʼ��WiFiоƬ��ĳЩ���ܣ��Ա���պʹ���CSI���ݡ�
     
@@ -365,7 +392,7 @@ void app_main()
     ets_printf(" myMAC: " MACSTR ,MAC2STR(myMAC));
 
     
-        
+    /*    
     if (myMAC[5]==0x14) myMsg.idSens=1;
     else if (myMAC[5]==0x98) myMsg.idSens=2; // ITIV
     else if (myMAC[5]==0x2c) myMsg.idSens=3;
@@ -380,7 +407,20 @@ void app_main()
     else if (myMAC[5]==0x30) myMsg.idSens=13;
     else if (myMAC[5]==0x7c) myMsg.idSens=14;
     else if (myMAC[5]==0xb0) myMsg.idSens=15;
-    else myMsg.idSens=9;
+    else myMsg.idSens=9;*/
+
+    for(int i = 0; i < sizeof(CONFIG_CSI_MACS), i++){
+        /* //this condition is used for ESPs with the same hex in fifth position, remember to write all the ocorrences here, if necessary
+        if(i==0){
+            if(myMAC[5] == 0x00){myMsg.idSens = 0; if(myMAC[4] == 0x00) myMsg.idSens = 0}
+            break;
+        }*/
+
+        if(myMAC[5] == CONFIG_CSI_MACS[i][5]){
+            myMsg.idSens = i+1;
+            break;
+        }   
+    }
 
     if      (myMsg.idSens==3)  seqSens = 0;  // leave 1 TDMA slot for BC8
     else if (myMsg.idSens==4)  seqSens = 1;

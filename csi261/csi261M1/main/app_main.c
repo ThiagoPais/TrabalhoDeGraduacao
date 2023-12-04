@@ -85,7 +85,14 @@ int32_t last_time[15]; //us time differe
 uint8_t myMAC[6];
 
 static const char *TAG = "csi_send";
-static const uint8_t CONFIG_CSI_SEND_MAC[] = {0xc4, 0xde, 0xe2, 0xc0, 0x10, 0xc8}; // "8"
+static const uint8_t CONFIG_CSI_MACS[][] =  {{0xc4, 0xde, 0xe2, 0xc0, 0x10, 0xc8}, //Master 1
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa}, //Master 2
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa}, //Sensors
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa},
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa},
+                                             {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa},
+                                             };
+//static const uint8_t CONFIG_CSI_SEND_MAC[] = {0xc4, 0xde, 0xe2, 0xc0, 0x10, 0xc8}; // "8"
 
 
 #define DEC_PLACE_MULT 1000
@@ -115,6 +122,7 @@ void print_stime() {
 /* ***********************************************
    Get Device names {idSensor | idMaster} from mac
    ***********************************************/
+/*
 uint8_t na4MAC(uint8_t *mac) {
     uint8_t name;
     uint8_t mac4=mac[4], mac5=mac[5];
@@ -135,7 +143,26 @@ uint8_t na4MAC(uint8_t *mac) {
     else if (mac5==0xb0) name=15;
     else name=9;
     return name;
+}*/
+
+uint8_t na4MAC(uint8_t *mac) {
+    uint8_t name;
+    
+    for(int i = 0; i < sizeof(CONFIG_CSI_MACS), i++){
+        /*
+        if(i==0){ //this condition is used for ESPs with the same hex in fifth position, remember to write all the ocorrences here, if necessary
+            if(mac[5] == 0x00){name = 0; if(mac[4] == 0x00) name = 0}
+            break;
+        }*/
+
+        if(mac[5] == CONFIG_CSI_MACS[i][5]){
+            name = i+1;
+            break;
+        }   
+    }
+    return name;
 }
+
 
 
 /* ***********************************************
@@ -158,7 +185,7 @@ static void wifi_init()
     ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
 
     ESP_ERROR_CHECK(esp_wifi_set_channel(CONFIG_LESS_INTERFERENCE_CHANNEL, WIFI_SECOND_CHAN_BELOW));
-    ESP_ERROR_CHECK(esp_wifi_set_mac(WIFI_IF_STA, CONFIG_CSI_SEND_MAC));
+    ESP_ERROR_CHECK(esp_wifi_set_mac(WIFI_IF_STA, CONFIG_CSI_MACS[0]));
 }
 
 
@@ -296,13 +323,13 @@ void app_main()
     
     ESP_LOGI(TAG, "================ CSI SEND ================");
     ESP_LOGI(TAG, "wifi_channel: %d, send_frequency: %d, mac: " MACSTR,
-             CONFIG_LESS_INTERFERENCE_CHANNEL, CONFIG_SEND_FREQUENCY, MAC2STR(CONFIG_CSI_SEND_MAC));
+             CONFIG_LESS_INTERFERENCE_CHANNEL, CONFIG_SEND_FREQUENCY, MAC2STR(CONFIG_CSI_MACS[0]));
     
     
     ESP_ERROR_CHECK(esp_base_mac_addr_get(myMAC));
-    if (myMAC[5]==0xc8) bcM1.idMaster=1;        // "8" Red Label on ESP32
-    else if (myMAC[5]==0x98) bcM1.idMaster=2;   // "2"
-    else bcM1.idMaster=3;                       // "1" myMAC[5]==0x14
+    if (myMAC[5]==CONFIG_CSI_MACS[0][5]) bcM1.idMaster=1;        // "1" Master 1
+    else if (myMAC[5]==CONFIG_CSI_MACS[1][5]) bcM1.idMaster=2;   // "2" Master 2
+    else bcM1.idMaster=3;                       // "3" Master 3 (if existing)
     
     // ets_printf() allways for 'grep "CSI_DATA" > file.csv'
     //    bcMsg.debugFlag = 0b001;  // M1 debug prints
